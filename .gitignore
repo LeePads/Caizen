@@ -54,6 +54,14 @@ skills-lock.json
 /design-references/
 /public/Attachments/
 
+# Only reviewed public documentation belongs in release snapshots.
+/docs/*
+!/docs/ANDROID.md
+!/docs/ARCHITECTURE.md
+!/docs/BACKUP-SYNC.md
+!/docs/STORAGE.md
+!/docs/DEPLOYMENT.md
+
 # Native build output and generated Capacitor inputs (recreated by cap:sync)
 .gradle/
 .kotlin/
@@ -75,6 +83,7 @@ android/app/src/main/res/xml/config.xml
 *.class
 *.iml
 *.hprof
+*.caizen-android-build-disabled
 
 # Generated audit output; retain the source-controlled token comparison input
 /artifacts/*

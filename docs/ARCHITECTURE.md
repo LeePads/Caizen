@@ -4,6 +4,8 @@
 
 Caizen uses the Next.js App Router. `/` is the public landing page; `/app/` is the profile-based application. `app/layout.tsx` owns global metadata, theme, toasts, and web production analytics. `app/app/page.tsx` composes navigation, dynamically loaded sections/modals, settings, and workspace actions.
 
+CaizenManager is the private source of truth; CaizenPublic is the public release snapshot. Production at `https://caizen.space` comes from the public repository; staging at `https://caizenlife.vercel.app` comes from the private repository. `NEXT_PUBLIC_SITE_URL` owns metadata and indexing; `NEXT_PUBLIC_APP_URL` independently selects Android's hosted APIs. The landing page checks public GitHub Releases using `hooks/use-android-release.ts` and `lib/public-release.ts`. See [Deployment](DEPLOYMENT.md).
+
 `app/app/layout.tsx` mounts `NativeStartupGate`, then `WorkspaceStartupGate`, then application providers. The native gate performs read-only storage discovery and early lifecycle/notification registration. It shows progress or Retry on discovery failure; it does not own a separate Cloud onboarding screen. The shared workspace gate reconciles durable Demo transitions before providers mount. `AppProvider` initializes storage, normalizes loaded profiles, and provides a usable default profile for fresh local setup.
 
 On a Capacitor build, `app/page.tsx` renders the app layout/page at the root instead of landing markup. Native missing routes recover to `/app/`. Deep links, widgets, shortcuts, and notification targets enter `lib/native/startup-route-queue.ts`; the hydrated native shell applies them against the selected profile.

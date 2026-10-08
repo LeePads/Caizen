@@ -51,7 +51,7 @@ No signing keys or signing properties are supplied. Configure your own signing i
 | Signed release APK | `android/app/build/outputs/apk/release/app-release.apk` |
 | Release AAB | `android/app/build/outputs/bundle/release/app-release.aab` |
 
-All built APK/AAB files are ignored. The landing page's `/downloads/caizen-android.apk` link needs a separately supplied deployment artifact.
+All built APK/AAB files are ignored. Public APK downloads use the latest stable GitHub Release in `LeePads/Caizen` and its uploaded asset named `caizen-android.apk`; the landing page reports unavailability if either is absent. Keep the existing package ID/private signing identity and set `NEXT_PUBLIC_APP_URL=https://caizen.space` for public release APKs. Upload signed APKs only as Release assets, never to the source tree. See [Deployment and public releases](DEPLOYMENT.md).
 
 ## Updates and retained checks
 

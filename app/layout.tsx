@@ -18,10 +18,10 @@ import {
 import {
   Toaster,
 } from '@/components/ui/toaster';
+import { getSiteUrl, PRODUCTION_SITE_URL } from '@/lib/site-url';
 
-const APP_URL =
-  process.env.NEXT_PUBLIC_APP_URL ||
-  'https://www.caizen.space';
+const SITE_URL = getSiteUrl();
+const SHOULD_INDEX_SITE = SITE_URL === PRODUCTION_SITE_URL && process.env.VERCEL_ENV !== 'preview';
 
 const SHOULD_MOUNT_VERCEL_ANALYTICS =
   process.env.NODE_ENV === 'production' &&
@@ -88,7 +88,7 @@ const THEME_BOOT_SCRIPT = `
 `;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(APP_URL),
+  metadataBase: new URL(SITE_URL),
   title: {
     default:
       'Caizen — Personal Life Manager',
@@ -139,7 +139,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: APP_URL,
+    url: SITE_URL,
     siteName:
       'Caizen',
     title:
@@ -166,8 +166,8 @@ export const metadata: Metadata = {
     ],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: SHOULD_INDEX_SITE,
+    follow: SHOULD_INDEX_SITE,
   },
 };
 

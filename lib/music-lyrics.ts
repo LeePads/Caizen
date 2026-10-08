@@ -85,7 +85,7 @@ export async function fetchMusicLyrics({
     {
       signal,
       headers: {
-        'Lrclib-Client': 'Caizen/1.0 (https://www.caizen.space)',
+        'Lrclib-Client': 'Caizen/1.0 (https://caizen.space)',
       },
     },
   );

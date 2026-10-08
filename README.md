@@ -4,6 +4,14 @@ A local-first personal life manager for the web and Android. Caizen brings plann
 
 The public landing page is at `/`; the application is at `/app/`. Android packages the same application with Capacitor and opens the product directly.
 
+[Website](https://caizen.space) · [Open Caizen](https://caizen.space/app/) · [View on GitHub](https://github.com/LeePads/Caizen) · [Public releases](https://github.com/LeePads/Caizen/releases)
+
+## Repositories and deployments
+
+This CaizenPublic repository is the cleaned public release snapshot connected to `LeePads/Caizen`. CaizenManager remains the private development source of truth. Application changes originate there and are transferred here as reviewed file contents, without private Git history; this is not a separately developed application.
+
+The intended stable deployment is `https://caizen.space` from this repository. `https://caizenlife.vercel.app` remains development/staging from the private source. Use separate Vercel projects and configure their metadata/API origins separately. Live deployment settings remain **Unverified**. See [Deployment and public release process](docs/DEPLOYMENT.md) for the exact manual setup and snapshot workflow.
+
 ## Stack
 
 | Layer | Current configuration |
@@ -47,6 +55,7 @@ No environment file is required for core local records. To enable integrations, 
 | `RAWG_API_KEY` | Server-only game catalog credential |
 | `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET` | Server-only music metadata credentials |
 | `NEXT_PUBLIC_APP_URL` | Credential-free HTTPS origin hosting the game, music, and exercise-media API routes for Android |
+| `NEXT_PUBLIC_SITE_URL` | This site's metadata origin: `https://caizen.space` for production; `https://caizenlife.vercel.app` for staging, which disables indexing |
 | `CAIZEN_REQUIRE_CLOUD=1` | Optional Android configuration gate requiring public Cloud configuration |
 
 Never put service-role keys or server credentials in `NEXT_PUBLIC_*` variables. Android has no Next.js server: its hosted API features require a separately deployed web origin. Manual records remain available when optional services are unavailable.
@@ -64,7 +73,7 @@ pnpm android:debug
 
 `cap:sync` runs the Android web build and then `cap sync android`, recreating exported web assets, plugin wiring, and Capacitor configuration. Run it before opening/building this fresh native copy. Debug output is `android/app/build/outputs/apk/debug/app-debug.apk`. See [Android setup](docs/ANDROID.md) for release tasks, signing, and safe update installation.
 
-Built APKs are excluded, including `public/downloads/caizen-android.apk`. The unchanged landing page references that download path; it will be unavailable until a separately built APK is placed there for deployment.
+Built APKs are excluded from source. The landing page checks the latest published stable [public GitHub Release](https://github.com/LeePads/Caizen/releases) and downloads its uploaded `caizen-android.apk` asset. If no release or matching asset exists, it shows a truthful unavailable state; network/rate-limit failures show that availability could not be checked. No public release existed at the 2026-10-08 inspection. Publish the signed APK as a Release asset, never as a source file. Public release APKs use `NEXT_PUBLIC_APP_URL=https://caizen.space` and the existing private signing identity; no signing material belongs in this repository.
 
 ## Retained tests and scripts
 
