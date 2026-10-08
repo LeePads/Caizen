@@ -1,0 +1,36 @@
+{
+  "name": "Caizen — Personal Life Manager",
+  "short_name": "Caizen",
+  "description": "A local-first personal operating system for routines, health, productivity, finances, goals, media, and everyday life.",
+  "id": "/app/",
+  "start_url": "/app/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "background_color": "#191a18",
+  "theme_color": "#191a18",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/icons/caizen-desktop-icon-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/caizen-monochrome-black-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "monochrome"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "lifestyle",
+    "utilities"
+  ],
+  "lang": "en"
+}

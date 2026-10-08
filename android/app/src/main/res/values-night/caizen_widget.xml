@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark appearance. Status hues are lifted for contrast on a dark
+         surface while keeping the same semantic mapping as the light set. -->
+    <color name="caizen_widget_background">#FF181917</color>
+    <color name="caizen_widget_surface">#FF181917</color>
+    <color name="caizen_widget_foreground">#FFF1F1EC</color>
+    <color name="caizen_widget_muted">#FFB1B2A9</color>
+    <color name="caizen_widget_accent">#FFB58036</color>
+    <color name="caizen_widget_on_accent">#FF21190D</color>
+    <color name="caizen_widget_outline">#24FFFFFF</color>
+
+    <color name="caizen_status_office">#FF60A5FA</color>
+    <color name="caizen_status_wfh">#FF4ADE80</color>
+    <color name="caizen_status_travel">#FFFBBF24</color>
+    <color name="caizen_status_holiday">#FFC084FC</color>
+    <color name="caizen_status_leave">#FFFB7185</color>
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_today_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/widget_upcoming_title"
+            android:textColor="@color/caizen_widget_foreground"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/widget_today_refresh"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:alpha="0.72"
+            android:contentDescription="@string/widget_refresh"
+            android:padding="10dp"
+            android:src="@drawable/ic_stat_caizen" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/widget_upcoming_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/widget_upcoming_empty"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/widget_upcoming_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/widget_upcoming_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</LinearLayout>

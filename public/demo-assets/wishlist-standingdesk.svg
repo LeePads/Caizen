@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-label="wishlist standingdesk">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#0b1324"/>
+          <stop offset=".55" stop-color="#0f766e"/>
+          <stop offset="1" stop-color="#5eead4"/>
+        </linearGradient>
+        <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#5eead4"/>
+          <stop offset="1" stop-color="#0f766e"/>
+        </linearGradient>
+        <filter id="blur"><feGaussianBlur stdDeviation="55"/></filter>
+      </defs>
+      <rect width="1024" height="768" rx="64" fill="url(#bg)"/>
+      <circle cx="120" cy="110" r="180" fill="#5eead4" opacity=".18" filter="url(#blur)"/>
+      <circle cx="900" cy="650" r="220" fill="#0f766e" opacity=".2" filter="url(#blur)"/>
+      <path d="M0 690c220-100 355-80 510 0s310 100 514 0v78H0z" fill="#020617" opacity=".22"/>
+      
+        <rect x="155" y="240" width="714" height="80" rx="20" fill="#ffffff" opacity=".94"/>
+        <rect x="235" y="320" width="55" height="360" rx="18" fill="#ffffff"/>
+        <rect x="734" y="320" width="55" height="360" rx="18" fill="#ffffff"/>
+        <rect x="360" y="100" width="304" height="180" rx="20" fill="#0f172a"/>
+        <rect x="390" y="130" width="244" height="120" rx="12" fill="url(#accent)"/>
+        
+      <rect x="18" y="18" width="988" height="732" rx="48" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="4"/>
+    </svg>

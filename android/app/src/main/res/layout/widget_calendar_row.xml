@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    One week row of the calendar widget grid.
+
+    RemoteViews cannot inflate arbitrary views at runtime, but it can add a
+    pre-inflated layout to a container with addView(). The provider builds the
+    month by adding one of these per week and one cell layout per day, which
+    keeps the grid honest for 4-, 5- and 6-week months instead of leaving a
+    fixed block of empty space.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_calendar_week"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" />

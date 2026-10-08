@@ -1,0 +1,88 @@
+.workspace {
+  container: health / inline-size;
+  min-width: 0;
+}
+
+.dialog {
+  min-width: 0;
+}
+
+.weightTable,
+.sleepTable {
+  display: none;
+  overflow-x: auto;
+}
+
+.weightRecords,
+.sleepRecords {
+  display: block;
+}
+
+.dayNavigator {
+  grid-template-columns: var(--health-control-size, 2.75rem) minmax(0, 1fr) var(--health-control-size, 2.75rem);
+}
+
+.dayNavigator > button {
+  width: var(--health-control-size, 2.75rem);
+}
+
+.menu {
+  max-width: calc(100vw - 1rem);
+  max-height: calc(100dvh - 1rem);
+  overflow-y: auto;
+}
+
+@container health (min-width: 44rem) {
+  .weightTable { display: block; }
+  .weightRecords { display: none; }
+}
+
+@container health (min-width: 56rem) {
+  .sleepTable { display: block; }
+  .sleepRecords { display: none; }
+}
+
+@container health (max-width: 28rem) {
+  :global(html[data-capacitor='true']) .workspace .foodActions,
+  .foodActions,
+  .quickActions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .foodActions > *,
+  .foodActions > div > button,
+  .quickActions > button {
+    min-width: 0;
+    width: 100%;
+    height: auto;
+    white-space: normal;
+    justify-content: center;
+  }
+
+  .foodActions svg,
+  .quickActions svg {
+    flex-shrink: 0;
+  }
+}
+
+@media (pointer: coarse) {
+  .workspace,
+  .dialog {
+    --health-control-size: 3rem;
+  }
+
+  .workspace :is(button, summary, [role='combobox']):not([role='switch']),
+  .dialog :is(button, summary, [role='combobox']):not([role='switch']),
+  .menu [role='menuitem'] {
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+
+  .workspace :is(input, textarea):not([type='checkbox']):not([type='radio']),
+  .dialog :is(input, textarea):not([type='checkbox']):not([type='radio']) {
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+}

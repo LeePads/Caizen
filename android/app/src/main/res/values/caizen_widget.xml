@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="caizen_widget_background">#FFFAFAF7</color>
+    <color name="caizen_widget_surface">#FFFAFAF7</color>
+    <color name="caizen_widget_foreground">#FF252621</color>
+    <color name="caizen_widget_muted">#FF62635B</color>
+    <color name="caizen_widget_accent">#FFB58036</color>
+    <color name="caizen_widget_on_accent">#FF21190D</color>
+    <color name="caizen_widget_outline">#18252621</color>
+
+    <string name="widget_appearance_label">Appearance</string>
+    <string name="widget_appearance_system">Follow system</string>
+    <string name="widget_appearance_light">Minimal Light</string>
+    <string name="widget_appearance_dark">Minimal Dark</string>
+    <string name="widget_appearance_help">Applies only to this widget. Follow system uses Android Light or Dark mode.</string>
+
+    <color name="caizen_status_office">#FF2563EB</color>
+    <color name="caizen_status_wfh">#FF16A34A</color>
+    <color name="caizen_status_travel">#FFD97706</color>
+    <color name="caizen_status_holiday">#FF7C3AED</color>
+    <color name="caizen_status_leave">#FFE11D48</color>
+
+    <string name="widget_calendar_name">Caizen Calendar</string>
+    <string name="widget_routines_name">Caizen Routines</string>
+    <string name="widget_today_name">Caizen Today</string>
+    <string name="widget_work_tasks_name">Caizen Work Tasks</string>
+
+    <string name="widget_calendar_description">A resizable month calendar with work status and upcoming events.</string>
+    <string name="widget_routines_description">See and complete routines due today from your home screen.</string>
+    <string name="widget_today_description">Priority-first personal tasks for today.</string>
+    <string name="widget_work_tasks_description">A focused, actionable queue of open Work tasks.</string>
+
+    <string name="widget_refresh">Redraw widget</string>
+    <string name="widget_refresh_glyph">↻</string>
+    <string name="widget_calendar_prev">Previous month</string>
+    <string name="widget_calendar_next">Next month</string>
+    <string name="widget_calendar_prev_glyph">‹</string>
+    <string name="widget_calendar_next_glyph">›</string>
+    <string name="widget_upcoming_title">Upcoming</string>
+    <string name="widget_upcoming_empty">Nothing upcoming</string>
+    <string name="widget_calendar_empty">No calendar data yet</string>
+    <string name="widget_open_to_sync">Open Caizen to sync this widget</string>
+    <string name="widget_calendar_preparing">Preparing Calendar.</string>
+    <string name="widget_calendar_configuration_required">Choose a profile for this widget.</string>
+    <string name="widget_calendar_stale">Open Caizen to refresh</string>
+    <string name="widget_calendar_no_upcoming">No upcoming events</string>
+    <string name="widget_calendar_time_unavailable">Date or time unavailable</string>
+    <string name="widget_routines_empty">No routines due today</string>
+    <string name="widget_routines_incomplete">Not completed</string>
+    <string name="widget_routines_done">Completed</string>
+    <string name="widget_routines_accepted">Completed · sync pending</string>
+    <string name="widget_routines_pending">Sync pending</string>
+    <string name="widget_routines_complete">Complete routine</string>
+    <string name="widget_routines_retry">Try completing again</string>
+    <string name="widget_routines_failed">Could not sync; open Caizen</string>
+    <string name="widget_routines_refresh_needed">Open Caizen to refresh</string>
+    <string name="widget_routines_stale">Open Caizen to refresh</string>
+    <string name="widget_routines_names_hidden">Names hidden; open widget settings to complete</string>
+    <string name="widget_routines_all_done">All due routines complete</string>
+    <string name="widget_routines_more_available">More routines are available in Caizen</string>
+    <string name="widget_routines_preparing">Preparing Routines.</string>
+    <string name="widget_routines_configuration_required">Choose a profile for this widget.</string>
+    <string name="widget_today_empty">Nothing needs attention today</string>
+    <string name="widget_today_preparing">Preparing Today.</string>
+    <string name="widget_today_configuration_required">Choose a profile for this widget.</string>
+    <string name="widget_today_names_hidden">Names hidden; enable names to complete items</string>
+    <string name="widget_today_incomplete">Not completed</string>
+    <string name="widget_today_done">Completed</string>
+    <string name="widget_today_accepted">Accepted · sync pending</string>
+    <string name="widget_today_pending">Sync pending</string>
+    <string name="widget_today_failed">Could not sync; open Caizen</string>
+    <string name="widget_today_stale">Open Caizen to refresh</string>
+    <string name="widget_today_complete">Complete item</string>
+    <string name="widget_today_retry">Try completing again</string>
+    <string name="widget_work_tasks_empty">Work is clear - No open tasks</string>
+    <string name="widget_work_tasks_preparing">Preparing Work Tasks.</string>
+    <string name="widget_work_tasks_configuration_required">Choose a profile for this widget.</string>
+    <string name="widget_work_tasks_names_hidden">Names hidden; enable names to complete tasks</string>
+    <string name="widget_work_tasks_accepted">Accepted - sync pending</string>
+    <string name="widget_work_tasks_pending">Sync pending</string>
+    <string name="widget_work_tasks_failed">Could not sync; open Caizen</string>
+    <string name="widget_work_tasks_stale">Open Caizen to refresh</string>
+    <string name="widget_work_tasks_complete">Complete Work task</string>
+    <string name="widget_work_tasks_retry">Try completing again</string>
+    <string name="widget_work_tasks_complete_glyph">&#x2713;</string>
+    <string name="widget_today_complete_glyph">✓</string>
+    <string name="widget_untitled_event">Untitled event</string>
+
+    <string name="widget_status_office">Office</string>
+    <string name="widget_status_wfh">Work from home</string>
+    <string name="widget_status_travel">Travel</string>
+    <string name="widget_status_holiday">Holiday</string>
+    <string name="widget_status_leave">Leave</string>
+    <string name="widget_status_none">No work status</string>
+
+    <plurals name="widget_more_events">
+        <item quantity="one">+%d more event</item>
+        <item quantity="other">+%d more events</item>
+    </plurals>
+</resources>

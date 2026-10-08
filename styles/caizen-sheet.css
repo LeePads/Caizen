@@ -1,0 +1,320 @@
+/* =========================================================
+   Shared Caizen bottom action sheet.
+
+   Used by the photo-source chooser and long-press entry
+   action menus. The sheet is fully opaque so dense content
+   behind it never bleeds through.
+   ========================================================= */
+
+.cz-sheet-root {
+  position: fixed;
+  inset: 0;
+  z-index: 11000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  isolation: isolate;
+  overscroll-behavior: contain;
+}
+
+.cz-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--scrim);
+  cursor: default;
+}
+
+.cz-sheet {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 32rem;
+  max-height: min(85dvh, 52rem);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
+  border: 1px solid var(--border);
+  border-bottom: 0;
+  border-radius: 1.5rem 1.5rem 0 0;
+
+  background: var(--card);
+  background-image: none;
+  color: var(--card-foreground);
+  opacity: 1;
+
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+
+  box-shadow:
+    0 -1px 0 color-mix(in oklch, var(--border) 65%, transparent),
+    0 -24px 70px -24px rgb(0 0 0 / 0.7);
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.cz-sheet-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 1rem 1rem 0.75rem;
+
+  border-bottom: 1px solid color-mix(in oklch, var(--border) 65%, transparent);
+  background: var(--card);
+  color: var(--card-foreground);
+}
+
+.cz-sheet-header > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.cz-sheet-header h2 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.25;
+  color: var(--card-foreground);
+}
+
+.cz-sheet-header p {
+  margin-top: 0.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--muted-foreground);
+}
+
+.cz-sheet-close {
+  display: inline-flex;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid transparent;
+  border-radius: 0.85rem;
+
+  background: transparent;
+  color: var(--muted-foreground);
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 120ms ease;
+}
+
+.cz-sheet-close:hover {
+  border-color: var(--border);
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.cz-sheet-close:active {
+  transform: scale(0.97);
+}
+
+.cz-sheet-close:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.cz-sheet-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.65rem 0.75rem 1rem;
+}
+
+.cz-sheet-action {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+
+  min-height: 3.25rem;
+  width: 100%;
+
+  border: 1px solid transparent;
+  border-radius: 1rem;
+
+  background: transparent;
+  color: var(--foreground);
+
+  padding: 0.8rem 0.9rem;
+  text-align: left;
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 120ms ease;
+}
+
+.cz-sheet-action:hover {
+  border-color: color-mix(in oklch, var(--border) 70%, transparent);
+  background: var(--muted);
+}
+
+.cz-sheet-action:active {
+  transform: scale(0.992);
+  background: color-mix(in oklch, var(--muted) 88%, var(--card));
+}
+
+.cz-sheet-action:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.cz-sheet-action > span {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.cz-sheet-action strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: inherit;
+}
+
+.cz-sheet-action small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--muted-foreground);
+}
+
+.cz-sheet-action[data-destructive='true'] {
+  color: var(--destructive);
+}
+
+.cz-sheet-action[data-destructive='true']:hover {
+  border-color: color-mix(in oklch, var(--destructive) 30%, transparent);
+  background: color-mix(in oklch, var(--destructive) 10%, var(--card));
+}
+
+.cz-sheet-action[data-destructive='true'] small {
+  color: color-mix(in oklch, var(--destructive) 75%, var(--muted-foreground));
+}
+
+.cz-sheet-action[disabled] {
+  cursor: not-allowed;
+  opacity: 0.42;
+  transform: none;
+}
+
+.cz-sheet-action[disabled]:hover {
+  border-color: transparent;
+  background: transparent;
+}
+
+/* Context actions stay inside the visible viewport on compact Android. */
+.cz-sheet-root[data-presentation='context'] {
+  align-items: center;
+  padding: max(0.75rem, env(safe-area-inset-top, 0px))
+    max(0.75rem, env(safe-area-inset-right, 0px))
+    max(0.75rem, env(safe-area-inset-bottom, 0px))
+    max(0.75rem, env(safe-area-inset-left, 0px));
+}
+
+.cz-sheet-root[data-presentation='context'] .cz-sheet {
+  width: min(22rem, calc(100vw - 1.5rem));
+  max-height: min(80dvh, 40rem);
+  border-bottom: 1px solid var(--border);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.42);
+}
+
+/* Anchored menu — a small popover pinned to its trigger, not a full sheet.
+   This must apply at every viewport width: the JS that computes menuPosition
+   always sets data-anchored="true" and always applies viewport-absolute
+   left/top inline styles meant only for this fixed-position treatment. When
+   this was gated to >=640px, a narrower viewport left .cz-sheet-anchored on
+   the base .cz-sheet rule (position: relative, near full-width/height) while
+   the inline left/top offsets still applied as relative-position offsets,
+   producing a large, displaced bar instead of a small anchored popover. */
+.cz-sheet-root[data-anchored='true'] {
+  display: block;
+  padding: 0;
+  pointer-events: none;
+}
+
+.cz-sheet-root[data-anchored='true'] .cz-sheet-backdrop {
+  background: transparent;
+  pointer-events: auto;
+}
+
+.cz-sheet-anchored {
+  position: fixed;
+  width: 18rem;
+  max-width: calc(100vw - 1.5rem);
+  max-height: min(26rem, calc(100dvh - 1.5rem));
+  margin: 0;
+
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.42);
+
+  pointer-events: auto;
+}
+
+.cz-sheet-anchored .cz-sheet-header {
+  border-radius: 1rem 1rem 0 0;
+}
+
+@media (min-width: 640px) {
+  .cz-sheet-root {
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .cz-sheet {
+    border-bottom: 1px solid var(--border);
+    border-radius: 1.5rem;
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cz-sheet-close,
+  .cz-sheet-action {
+    transition: none;
+  }
+
+  .cz-sheet-close:active,
+  .cz-sheet-action:active {
+    transform: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .cz-sheet-root[data-presentation='context'] .cz-sheet-header {
+    border-radius: 1.25rem 1.25rem 0 0;
+  }
+}

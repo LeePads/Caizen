@@ -1,0 +1,6 @@
+/* Recovery may arrive while Settings or Cloud Backup is already open. Keep
+   this interruptive account action above those surfaces without changing
+   the elevation of ordinary form dialogs. */
+:global(.caizen-modal-root):has(.content) {
+  z-index: 11000;
+}

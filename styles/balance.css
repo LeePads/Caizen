@@ -1,0 +1,60 @@
+/* Balance controls follow available panel width and input method. */
+.balance-workspace,
+.balance-form {
+  min-width: 0;
+}
+
+.balance-header-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.balance-header-actions > * {
+  min-width: 0;
+}
+
+@media (min-width: 480px) {
+  .balance-header-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .balance-header-actions > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 640px) {
+  .balance-header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+@media (pointer: coarse) {
+  :is(.balance-workspace, .balance-form) :is(button, [role='combobox']):not([role='switch']):not([role='checkbox']) {
+    min-height: 3rem;
+    min-width: 3rem;
+  }
+
+  :is(.balance-workspace, .balance-form) :is(input, select, textarea):not([type='checkbox']):not([type='radio']) {
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+
+  :is(.balance-workspace, .balance-form) label:has([role='checkbox']) {
+    min-height: 3rem;
+  }
+}
+
+.balance-form button:not([role='switch']):not([role='checkbox']) {
+  white-space: normal;
+  height: auto;
+  min-height: 2.75rem;
+}
+
+.balance-form :is(input, select, textarea) {
+  min-width: 0;
+  max-width: 100%;
+}

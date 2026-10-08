@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_calendar_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/widget_calendar_prev"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/widget_calendar_prev"
+            android:gravity="center"
+            android:text="@string/widget_calendar_prev_glyph"
+            android:textColor="@color/caizen_widget_muted"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/widget_calendar_month"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/caizen_widget_foreground"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/widget_calendar_next"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/widget_calendar_next"
+            android:gravity="center"
+            android:text="@string/widget_calendar_next_glyph"
+            android:textColor="@color/caizen_widget_muted"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/widget_calendar_refresh"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/widget_refresh"
+            android:gravity="center"
+            android:text="@string/widget_refresh_glyph"
+            android:textColor="@color/caizen_widget_muted"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/widget_calendar_context"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="11sp" />
+    <TextView
+        android:id="@+id/widget_calendar_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/widget_row_background"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="4dp"
+        android:textSize="10sp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/widget_calendar_stale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="10sp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/widget_calendar_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/caizen_widget_foreground"
+        android:textSize="11sp" />
+
+    <LinearLayout
+        android:id="@+id/widget_calendar_day_strip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal" />
+    <LinearLayout
+        android:id="@+id/widget_calendar_weekdays"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/widget_calendar_grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/widget_calendar_upcoming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/widget_calendar_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/widget_row_background"
+        android:gravity="center"
+        android:padding="7dp"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="10sp"
+        android:visibility="gone" />
+</LinearLayout>

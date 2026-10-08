@@ -1,0 +1,24 @@
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+
+ignoredBuiltDependencies:
+  - unrs-resolver
+
+minimumReleaseAgeExclude:
+  - "@supabase/auth-js"
+  - "@supabase/functions-js"
+  - "@supabase/postgrest-js"
+  - "@supabase/realtime-js"
+  - "@supabase/storage-js"
+  - "@supabase/supabase-js"
+  - baseline-browser-mapping
+  - electron-to-chromium
+  - enhanced-resolve
+  - framer-motion
+  - motion-dom
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: false

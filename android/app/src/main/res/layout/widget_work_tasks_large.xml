@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_work_tasks_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/widget_work_tasks_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Work Tasks"
+                android:textColor="@color/caizen_widget_foreground"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/widget_work_tasks_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textColor="@color/caizen_widget_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/widget_work_tasks_refresh"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/widget_refresh"
+            android:gravity="center"
+            android:text="@string/widget_refresh_glyph"
+            android:textColor="@color/caizen_widget_muted"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/widget_work_tasks_summary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:textColor="@color/caizen_widget_foreground"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/widget_work_tasks_overdue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:textColor="@color/caizen_widget_accent"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/widget_work_tasks_stale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="10sp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/widget_work_tasks_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/widget_row_background"
+        android:gravity="center"
+        android:maxLines="1"
+        android:padding="6dp"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="10sp"
+        android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/widget_work_tasks_rows"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+    <TextView
+        android:id="@+id/widget_work_tasks_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/widget_row_background"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="10dp"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="11sp"
+        android:visibility="gone" />
+</LinearLayout>

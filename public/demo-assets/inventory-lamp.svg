@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-label="inventory lamp">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#052e16"/>
+          <stop offset=".55" stop-color="#16a34a"/>
+          <stop offset="1" stop-color="#86efac"/>
+        </linearGradient>
+        <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#86efac"/>
+          <stop offset="1" stop-color="#16a34a"/>
+        </linearGradient>
+        <filter id="blur"><feGaussianBlur stdDeviation="55"/></filter>
+      </defs>
+      <rect width="1024" height="768" rx="64" fill="url(#bg)"/>
+      <circle cx="120" cy="110" r="180" fill="#86efac" opacity=".18" filter="url(#blur)"/>
+      <circle cx="900" cy="650" r="220" fill="#16a34a" opacity=".2" filter="url(#blur)"/>
+      <path d="M0 690c220-100 355-80 510 0s310 100 514 0v78H0z" fill="#020617" opacity=".22"/>
+      
+        <path d="M365 615h295" stroke="#ffffff" stroke-width="38" stroke-linecap="round"/>
+        <path d="M512 615V355l145-145" stroke="#ffffff" stroke-width="38" stroke-linecap="round"/>
+        <path d="M610 160h190l-25 160H585z" fill="#ffffff" opacity=".94"/>
+        <circle cx="690" cy="310" r="130" fill="url(#accent)" opacity=".35"/>
+        
+      <rect x="18" y="18" width="988" height="732" rx="48" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="4"/>
+    </svg>

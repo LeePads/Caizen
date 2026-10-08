@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Caizen</string>
+    <string name="title_activity_main">Caizen</string>
+    <string name="package_name">app.caizen.life</string>
+    <string name="custom_url_scheme">caizen</string>
+    <string name="shortcut_quick_add">Quick Add</string>
+    <string name="shortcut_new_expense">New Expense</string>
+    <string name="shortcut_new_task">New Task</string>
+    <string name="shortcut_new_journal">New Journal</string>
+</resources>

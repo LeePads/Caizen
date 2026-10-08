@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    FileProvider roots for authority ${applicationId}.fileprovider.
+
+    Caizen declares this provider itself, so this file is the ONLY path
+    configuration for that authority - it replaces, rather than merges with,
+    anything a plugin would otherwise contribute. Every consumer of the
+    authority must therefore be represented here.
+
+    @capacitor/camera writes its capture temp file to
+    getExternalFilesDir(Environment.DIRECTORY_PICTURES) and then calls
+    FileProvider.getUriForFile(..., appId + ".fileprovider", file). Without the
+    external-files-path root below, that call throws IllegalArgumentException
+    ("Failed to find configured root that contains ..."), and camera capture
+    cannot open at all. The cache roots cover the plugin's temporary image and
+    crop/edit flows.
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path name="caizen_share_cache" path="caizen-share/" />
+    <files-path name="caizen_exports" path="exports/" />
+
+    <!-- @capacitor/camera capture target. -->
+    <external-files-path name="caizen_camera_pictures" path="Pictures" />
+    <!-- @capacitor/camera temporary and edited image staging. -->
+    <cache-path name="caizen_camera_cache" path="." />
+    <external-cache-path name="caizen_camera_external_cache" path="." />
+</paths>

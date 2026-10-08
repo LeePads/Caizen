@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_routines_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/widget_routines_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Routines"
+                android:textColor="@color/caizen_widget_foreground"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/widget_routines_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/caizen_widget_muted"
+                android:textSize="9sp" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/widget_routines_refresh"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/widget_refresh"
+            android:gravity="center"
+            android:text="@string/widget_refresh_glyph"
+            android:textColor="@color/caizen_widget_muted"
+            android:textSize="14sp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/widget_routines_context"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="10sp" />
+    <TextView
+        android:id="@+id/widget_routines_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/caizen_widget_foreground"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+    <ProgressBar
+        android:id="@+id/widget_routines_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="3dp"
+        android:max="100"
+        android:progressBackgroundTint="@color/caizen_widget_outline"
+        android:progressTint="@color/caizen_widget_accent" />
+    <TextView
+        android:id="@+id/widget_routines_stale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="9sp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/widget_routines_status"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+    <ListView
+        android:id="@+id/widget_routines_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:drawSelectorOnTop="false"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="false"
+        android:scrollbars="none" />
+    <LinearLayout
+        android:id="@+id/widget_routines_small_row_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/widget_routines_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/widget_row_background"
+        android:gravity="center"
+        android:maxLines="2"
+        android:padding="7dp"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="9sp"
+        android:visibility="gone" />
+</LinearLayout>

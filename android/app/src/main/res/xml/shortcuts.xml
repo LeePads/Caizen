@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="quick_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_stat_caizen"
+        android:shortcutShortLabel="@string/shortcut_quick_add"
+        android:shortcutLongLabel="@string/shortcut_quick_add">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="caizen://open?section=dashboard&amp;action=quick-add" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="new_expense"
+        android:enabled="true"
+        android:icon="@drawable/ic_stat_caizen"
+        android:shortcutShortLabel="@string/shortcut_new_expense"
+        android:shortcutLongLabel="@string/shortcut_new_expense">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="caizen://open?section=balance&amp;action=new-expense" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="new_task"
+        android:enabled="true"
+        android:icon="@drawable/ic_stat_caizen"
+        android:shortcutShortLabel="@string/shortcut_new_task"
+        android:shortcutLongLabel="@string/shortcut_new_task">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="caizen://open?section=lifehub&amp;action=add-task" />
+    </shortcut>
+    <shortcut
+        android:shortcutId="new_journal"
+        android:enabled="true"
+        android:icon="@drawable/ic_stat_caizen"
+        android:shortcutShortLabel="@string/shortcut_new_journal"
+        android:shortcutLongLabel="@string/shortcut_new_journal">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="caizen://open?section=journal&amp;action=add-journal" />
+    </shortcut>
+</shortcuts>

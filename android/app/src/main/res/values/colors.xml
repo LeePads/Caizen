@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F59E0B</color>
+    <color name="colorPrimaryDark">#191A18</color>
+    <color name="colorAccent">#F59E0B</color>
+    <color name="caizen_app_background">#191A18</color>
+    <color name="caizen_navigation_bar">#191A18</color>
+</resources>

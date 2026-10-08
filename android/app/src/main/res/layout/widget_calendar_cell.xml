@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_cell_root"
+    android:layout_width="0dp"
+    android:layout_height="28dp"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/widget_cell_day"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:gravity="center"
+        android:textSize="10sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="4dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/widget_cell_work_marker"
+            android:layout_width="10dp"
+            android:layout_height="2dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/widget_cell_event_marker"
+            android:layout_width="4dp"
+            android:layout_height="4dp"
+            android:layout_marginStart="2dp"
+            android:background="@drawable/widget_event_dot"
+            android:visibility="invisible" />
+    </LinearLayout>
+</LinearLayout>

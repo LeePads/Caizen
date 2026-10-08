@@ -1,0 +1,515 @@
+/* =========================================================
+   More navigation sheet.
+
+   Replaces a flat grid of every destination with grouped,
+   searchable rows. All surfaces are fully opaque so content
+   behind the sheet never bleeds through.
+   ========================================================= */
+
+.cz-more {
+  display: flex;
+  width: 100%;
+  max-height: 88dvh;
+  min-height: 0;
+  flex-direction: column;
+
+  background: var(--background);
+  background-image: none;
+  color: var(--foreground);
+  opacity: 1;
+
+  isolation: isolate;
+  overflow: hidden;
+  overscroll-behavior: contain;
+
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.cz-more-header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+
+  padding: 0.25rem 0 0.75rem;
+
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.cz-more-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+.cz-more-heading h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--foreground);
+}
+
+.cz-more-heading p {
+  margin-top: 0.15rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--muted-foreground);
+}
+
+.cz-more-edit,
+.cz-more-close,
+.cz-more-row-tools button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted-foreground);
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 120ms ease,
+    box-shadow 160ms ease;
+}
+
+.cz-more-edit {
+  min-height: 2.5rem;
+  gap: 0.35rem;
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--foreground);
+}
+
+.cz-more-close {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.85rem;
+}
+
+.cz-more-edit:hover,
+.cz-more-close:hover,
+.cz-more-row-tools button:hover {
+  border-color: color-mix(in oklch, var(--primary) 35%, var(--border));
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+.cz-more-edit:active,
+.cz-more-close:active,
+.cz-more-row-tools button:active {
+  transform: scale(0.97);
+}
+
+.cz-more-edit:focus-visible,
+.cz-more-close:focus-visible,
+.cz-more-row-tools button:focus-visible,
+.cz-more-reset:focus-visible,
+.cz-more-row:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.cz-more-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+
+  height: 2.75rem;
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  background: var(--card);
+  color: var(--muted-foreground);
+
+  padding: 0 0.75rem;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.cz-more-search:focus-within {
+  border-color: var(--ring);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 18%, transparent);
+  background: var(--background);
+}
+
+.cz-more-search input {
+  flex: 1;
+  min-width: 0;
+
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--foreground);
+
+  font-size: 0.85rem;
+}
+
+.cz-more-search input::placeholder {
+  color: var(--muted-foreground);
+  opacity: 0.85;
+}
+
+.cz-more-body {
+  min-height: 0;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 0.75rem 0 0;
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+
+  scrollbar-gutter: stable;
+}
+
+.cz-more-group + .cz-more-group {
+  margin-top: 1rem;
+}
+
+.cz-more-group h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 0.25rem 0.4rem;
+
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.cz-more-reset {
+  border-radius: 0.55rem;
+  padding: 0.25rem 0.4rem;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--primary);
+
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.cz-more-reset:hover {
+  background: color-mix(in oklch, var(--primary) 10%, transparent);
+}
+
+.cz-more-empty {
+  padding: 1rem 0.75rem;
+
+  border: 1px dashed color-mix(in oklch, var(--border) 75%, transparent);
+  border-radius: 0.9rem;
+
+  background: var(--card);
+
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--muted-foreground);
+}
+
+.cz-more-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cz-more-row-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.cz-more-row {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: center;
+  gap: 0.75rem;
+
+  min-height: 3rem;
+
+  border: 1px solid transparent;
+  border-radius: 0.9rem;
+
+  background: var(--card);
+  color: var(--foreground);
+
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 120ms ease,
+    box-shadow 160ms ease;
+}
+
+.cz-more-row:hover {
+  border-color: color-mix(in oklch, var(--border) 80%, transparent);
+  background: var(--muted);
+}
+
+.cz-more-row:active {
+  transform: scale(0.994);
+}
+
+.cz-more-row[data-active] {
+  border-color: color-mix(in oklch, var(--primary) 45%, var(--border));
+  background: color-mix(in oklch, var(--primary) 12%, var(--card));
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+
+.cz-more-row[data-active]:hover {
+  background: color-mix(in oklch, var(--primary) 16%, var(--card));
+}
+
+.cz-more-row-icon {
+  display: inline-flex;
+  height: 2rem;
+  width: 2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.6rem;
+
+  background: color-mix(in oklch, var(--primary) 12%, var(--card));
+  color: var(--primary);
+}
+
+.cz-more-row[data-active] .cz-more-row-icon {
+  background: color-mix(in oklch, var(--primary) 20%, var(--card));
+}
+
+.cz-more-row-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cz-more-row-pinned {
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+}
+
+.cz-more-row-current {
+  flex-shrink: 0;
+
+  border: 1px solid color-mix(in oklch, var(--primary) 30%, transparent);
+  border-radius: 999px;
+
+  background: color-mix(in oklch, var(--primary) 16%, var(--card));
+  color: var(--primary);
+
+  padding: 0.15rem 0.5rem;
+
+  font-size: 0.6rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cz-more-row-tools {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.cz-more-row-tools button {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 0.6rem;
+}
+
+.cz-more-row-tools button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.4;
+  transform: none;
+}
+
+.cz-more-row-tools button[disabled]:hover {
+  border-color: var(--border);
+  background: var(--card);
+  color: var(--muted-foreground);
+}
+
+/* Slightly tighter controls on narrow phones. */
+@media (max-width: 420px) {
+  .cz-more-header {
+    gap: 0.4rem;
+  }
+
+  .cz-more-edit {
+    padding-inline: 0.6rem;
+  }
+
+  .cz-more-row {
+    gap: 0.6rem;
+    padding-inline: 0.65rem;
+  }
+
+  .cz-more-row-current {
+    padding-inline: 0.4rem;
+  }
+}
+
+/* Desktop polish inside a centered or anchored sheet. */
+@media (min-width: 640px) {
+  .cz-more {
+    max-height: min(80dvh, 44rem);
+  }
+
+  .cz-more-body {
+    padding-right: 0.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cz-more-edit,
+  .cz-more-close,
+  .cz-more-search,
+  .cz-more-reset,
+  .cz-more-row,
+  .cz-more-row-tools button {
+    transition: none;
+  }
+
+  .cz-more-edit:active,
+  .cz-more-close:active,
+  .cz-more-row:active,
+  .cz-more-row-tools button:active {
+    transform: none;
+  }
+}
+
+/* Native More is a navigation list with quiet, single-line summaries. */
+html[data-capacitor='true'] .cz-more-kicker {
+  display: none;
+}
+
+html[data-capacitor='true'] .cz-more-heading h3 {
+  font-weight: 650;
+}
+
+html[data-capacitor='true'] .cz-more-close {
+  min-height: 3rem;
+  min-width: 3rem;
+  border-color: transparent;
+  background: transparent;
+}
+
+html[data-capacitor='true'] .cz-more-search {
+  height: 3rem;
+}
+
+html[data-capacitor='true'] .cz-more-search button {
+  min-height: 3rem;
+  min-width: 3rem;
+  display: grid;
+  place-items: center;
+}
+
+html[data-capacitor='true'] .cz-more-row {
+  background: transparent;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  padding-block: 0.5rem;
+  box-shadow: none;
+}
+
+html[data-capacitor='true'] .cz-more-row[data-active] {
+  background: var(--muted);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+html[data-capacitor='true'] .cz-more-row-icon,
+html[data-capacitor='true'] .cz-more-row[data-active] .cz-more-row-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  background: transparent;
+  color: var(--muted-foreground);
+}
+
+html[data-capacitor='true'] .cz-more-row-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  white-space: normal;
+}
+
+html[data-capacitor='true'] .cz-more-row-label :is(strong, small) {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html[data-capacitor='true'] .cz-more-row-label strong {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+html[data-capacitor='true'] .cz-more-row-label small {
+  margin-top: 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+}
+
+html[data-capacitor='true'] .cz-more-row-current {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted-foreground);
+}
+
+html[data-capacitor='true'] .cz-more-group h4 {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}

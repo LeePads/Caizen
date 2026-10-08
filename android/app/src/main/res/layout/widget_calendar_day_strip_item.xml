@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_strip_item"
+    android:layout_width="0dp"
+    android:layout_height="64dp"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="2dp">
+    <TextView
+        android:id="@+id/widget_strip_weekday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/caizen_widget_muted"
+        android:textSize="9sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/widget_strip_day"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        android:textColor="@color/caizen_widget_foreground"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/widget_strip_marker"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:background="@drawable/widget_event_dot"
+        android:visibility="invisible" />
+</LinearLayout>

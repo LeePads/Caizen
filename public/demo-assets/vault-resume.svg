@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768" role="img" aria-label="vault resume">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#1c1917"/>
+          <stop offset=".55" stop-color="#ea580c"/>
+          <stop offset="1" stop-color="#facc15"/>
+        </linearGradient>
+        <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#facc15"/>
+          <stop offset="1" stop-color="#ea580c"/>
+        </linearGradient>
+        <filter id="blur"><feGaussianBlur stdDeviation="55"/></filter>
+      </defs>
+      <rect width="1024" height="768" rx="64" fill="url(#bg)"/>
+      <circle cx="120" cy="110" r="180" fill="#facc15" opacity=".18" filter="url(#blur)"/>
+      <circle cx="900" cy="650" r="220" fill="#ea580c" opacity=".2" filter="url(#blur)"/>
+      <path d="M0 690c220-100 355-80 510 0s310 100 514 0v78H0z" fill="#020617" opacity=".22"/>
+      
+        <rect x="310" y="90" width="404" height="610" rx="32" fill="#ffffff" opacity=".96"/>
+        <rect x="355" y="150" width="314" height="430" rx="18" fill="#0f172a"/>
+        <rect x="400" y="220" width="224" height="24" rx="12" fill="url(#accent)"/>
+        <rect x="400" y="285" width="180" height="18" rx="9" fill="#64748b"/>
+        <rect x="400" y="335" width="224" height="18" rx="9" fill="#64748b"/>
+        <rect x="400" y="385" width="160" height="18" rx="9" fill="#64748b"/>
+        
+      <rect x="18" y="18" width="988" height="732" rx="48" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="4"/>
+    </svg>
